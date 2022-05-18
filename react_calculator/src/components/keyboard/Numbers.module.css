@@ -1,0 +1,17 @@
+.numbers {
+  height: 100%;
+  width: 74%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.numbers button {
+  height: 24%;
+  width: 31%;
+}
+
+button:nth-child(10) {
+  width: 100%;
+}

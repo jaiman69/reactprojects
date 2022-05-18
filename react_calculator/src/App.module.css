@@ -1,0 +1,27 @@
+.calculator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.keyboard {
+  margin-top: 1%;
+  width: 30vh;
+  height: 40vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.keyboard button {
+  font-size: 2rem;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+}
+
+.keyboard button:hover {
+  background-color: #000;
+}
