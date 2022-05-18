@@ -42,7 +42,8 @@ const reducer = (state, action) => {
     case "op2Update":
       return {
         ...state,
-        operand2: state.operand2 + action.value,
+        operand2: state.newFlag ? action.value : state.operand2 + action.value,
+        newFlag: false,
       };
 
     case "ADD":
@@ -77,11 +78,10 @@ const reducer = (state, action) => {
 
     case "RESULT":
       return {
-        ...state,
+        newFlag: true,
         operand2: calculate(state),
         operand1: "",
         operator: "",
-        disableFlag: true,
       };
 
     case "RESET":
@@ -89,7 +89,7 @@ const reducer = (state, action) => {
         operand1: "",
         operator: "",
         operand2: "",
-        disableFlag: true,
+        newFlag: true,
       };
 
     default:
@@ -102,6 +102,7 @@ const OperationProvider = (props) => {
     operand1: "",
     operator: "",
     operand2: "",
+    newFlag: true,
   };
 
   const [operationData, operationDispatch] = React.useReducer(
