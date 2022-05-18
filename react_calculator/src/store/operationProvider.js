@@ -23,7 +23,12 @@ const calculate = (state) => {
 const reducer = (state, action) => {
   switch (action.type) {
     case "op1Update":
-      if (state.operand2.toString().length === 0) {
+      if (state.operand2 === "-") {
+        return {
+          ...state,
+          operand2: "",
+        };
+      } else if (state.operand2.toString().length === 0) {
         return state;
       } else if (state.operand1.toString().length > 0) {
         return {
@@ -57,6 +62,7 @@ const reducer = (state, action) => {
         return {
           ...state,
           operand2: "-",
+          newFlag: false,
         };
       }
       return {
